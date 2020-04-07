@@ -3,7 +3,7 @@
 
 <h3 align="center"> Os desafios do Bootcamp GoStack </h3>
 
-Abaixo a lista dos desafios que foram propostos e marcados estão os que foram concluídos.
+Abaixo a lista dos desafios que foram propostos, os marcados já foram concluídos.
 
 ---
 
