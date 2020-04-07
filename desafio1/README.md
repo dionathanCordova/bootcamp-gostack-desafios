@@ -1,9 +1,9 @@
 <!-- # bootcamp-gostack-desafios -->
-![](images/header.png)
+![](../images/header.png)
 
 <h3 align="center">  Desafio 1 - Planejando meus estudos </h3>
 
-####Sobre o desafio
+#### Sobre o desafio
 
 Neste desafio foi proposto que eu planejasse meus estudos.
 
@@ -11,9 +11,9 @@ E para isto foi necessário a elaboração de duas ferramentas que iram me ajuda
 ferramentas estas que são um cronograma semanal e um crinograma diário das atividades que
 estarei estudando durante este bootscamp.
 
-####Cronograma semanal
+#### Cronograma semanal
 
-![](images/cronogramaSemanal.PNG)
+![](../images/cronogramaSemanal.PNG)
 
 Neste cronograma ataptei umas funcionalidades a mais para controlar meu andamento nos estudos, são elas:
 
@@ -28,9 +28,9 @@ PS: Os horarios de descanço estão acoplados dentro destes totalizadores em mod
 
 ---
 
-####Cronograma semanal
+#### Cronograma semanal
 
-![](images/CronMetas.PNG)
+![](../images/CronMetas.PNG)
 
 Cronograma agora semanal apontando qual a tarefa específica que estarei trabalhando.
 
