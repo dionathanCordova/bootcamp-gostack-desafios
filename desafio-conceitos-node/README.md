@@ -25,19 +25,19 @@ Um crud para quem não sabe é feito dos seguintes metodos:
 
 - Rota para criar
     url : /repositories
-    parametros : title, url, techs 
+    <br>parametros : title, url, techs 
 
 - Rota para alterar
     url : /repositories/:id,
-    parametros :  título, url, techs, id do repositorio que vem no header da requisição
+    <br>parametros :  título, url, techs, id do repositorio que vem no header da requisição
 
 - Rota para deletar
     url : /repositories/:id,
-    parametros : id do repositorio que vem no header da requisição 
+    <br>parametros : id do repositorio que vem no header da requisição 
 
 - Rota para incrementar likes
     url : /repositories/:id/likes,
-    parametros : id do repositorio que vem no header da requisição 
+    <br>parametros : id do repositorio que vem no header da requisição 
 
 ---
 
