@@ -1,13 +1,11 @@
 <!-- # bootcamp-gostack-desafios -->
 ![](../images/header.png)
 
-<h3 align="center">  Desafio 1 - Planejando meus estudos </h3>
+<h3 align="center">  Desafio 1 - Conceitos NodeJs </h3>
 
 ### Sobre o desafio
 
 Neste desafio foi proposto que fosse feito um crud de repositorios do Github.
-
-Utilizando uma lib chamada uuid para gerar os id´s unicos.
 
 ### As rotas
 
