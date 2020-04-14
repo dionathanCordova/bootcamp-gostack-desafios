@@ -1,7 +1,7 @@
 <!-- # bootcamp-gostack-desafios -->
 ![](../images/header.png)
 
-<h3 align="center">  Desafio 1 - Conceitos NodeJs </h3>
+<h3 align="center">  Desafio 2 - Conceitos NodeJs </h3>
 
 ### Sobre o desafio
 

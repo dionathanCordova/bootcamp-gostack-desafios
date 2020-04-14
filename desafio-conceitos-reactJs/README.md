@@ -11,8 +11,6 @@ Aplicação para listar, adicionar e remover repositories através da api feita 
 
 ![](../images/codigoFront.PNG)
 
-Um crud para quem não sabe é feito dos seguintes metodos:
-
 - Create : através da função handleAddRepository
 - Read (list) : através da funcão 
 - Delete : atravpes da funcão handleRemoveRepository
