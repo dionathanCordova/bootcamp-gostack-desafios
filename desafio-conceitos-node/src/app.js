@@ -32,63 +32,54 @@ app.post("/repositories", (request, response) => {
 
 app.put("/repositories/:id", (request, response) => {
   const { id } = request.params;
-  const { título, url, techs } = request.body;
-
-  if(!isUuid(id)) {
-    return response.status(400).json({error: 'Invalid ID'});
-  };
+  const { title, url, techs } = request.body;
 
   const repositorieIndex = repositories.findIndex(repos => repos.id === id);
 
   if(repositorieIndex < 0) {
     return response.status(400).json({error: "Repositorie not found"});
   }
+  
+  const repository = {
+    id,
+    title,
+    url,
+    techs,
+    likes: repositories[repositorieIndex].likes
+  }
 
-  repositories[repositorieIndex] = {id, título, url, techs};
-
-  return response.status(200).json(repositories);
+  repositories[repositorieIndex] = repository;
+  return response.json(repository);
 });
 
-app.delete("/repositories/:id", (req, res) => {
-  const { id } = req.params;
- 
-  if(!isUuid(id)) {
-    return response.status(400).json({error: 'Invalid ID'});
-  };
+app.delete("/repositories/:id", (request, response) => {
+  const { id } = request.params;
 
-  const repositorieIndex = repositories.findIndex(repos => repos.id === id);
+  const repositorieIndex = repositories.findIndex(repos => 
+    repos.id === id
+  );
   
-  if(repositorieIndex < 0) {
+  if(repositorieIndex >= 0) {
+    repositories.splice(repositorieIndex, 1);
+  }else{
     return response.status(400).json({error: 'This repository not exists'})
   }
 
-  repositories.splice(repositorieIndex, 1);
-
-  return res.status(204).send();
+  return response.status(204).send();
 });
 
 app.post("/repositories/:id/like", (request, response) => {
   const { id } = request.params;
 
-  if(!isUuid(id)) {
-    return response.status(400).json({error: 'Invalid ID'});
-  }
-
   const repositorieIndex = repositories.findIndex(repos => repos.id === id);
 
   if(repositorieIndex < 0) {
     return response.status(400).json({error: 'This repository not exists'})
   }
 
-  const idRep = repositories[repositorieIndex].id;
-  const title = repositories[repositorieIndex].title;
-  const url   = repositories[repositorieIndex].url;
-  const techs = repositories[repositorieIndex].techs;
-  const likes = repositories[repositorieIndex].likes + 1;
+  repositories[repositorieIndex].likes++;
 
-  repositories[repositorieIndex] = { id: idRep, title, url, techs, likes };
-
-  return response.status(200).json(repositories);
+  return response.status(200).json(repositories[repositorieIndex]);
 });
 
 module.exports = app;

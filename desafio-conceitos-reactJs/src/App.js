@@ -6,43 +6,36 @@ function App() {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    getRepositories()
+    api.get('repositories').then(Response => {
+      setRepositories(Response.data);
+    });
   }, [])
 
   async function handleAddRepository() {
-    const repositories = await api.post('repositories', {
-      url: "https://github.com/Rocketseat/bootcamp-gostack-desafios/tree/master/desafio-conceitos-NODE",
+    const response = await api.post('repositories', {
       title: "Desafio ReactJS",
+      url: "https://github.com/Rocketseat/bootcamp-gostack-desafios/tree/master/desafio-conceitos-NODE",
 	    techs: ["React", "NODE"]
     })
 
-    if(repositories.status === 200) {
-      getRepositories()
-    }
-  }
-
-  function getRepositories() {
-    api.get('repositories').then(Response => {
-      if(Response.status === 200) {
-        setRepositories(Response.data);
-      }
-    });
+    setRepositories([ ... repositories, response.data]);
   }
 
   async function handleRemoveRepository(id) {
-    const respoditories = await api.delete(`repositories/${id}`);
-    if(respoditories.status === 204) {
-      getRepositories()
-    }
+    await api.delete(`repositories/${id}`);
+    
+    setRepositories(repositories.filter(
+      repository => repository.id != id
+    ));
   }
 
   return (
     <div>
       <ul data-testid="repository-list">
-        {repositories.map(repositories => (
-          <li key={repositories.id}>
-            {repositories.title}
-            <button onClick={() => handleRemoveRepository(repositories.id)}>
+        {repositories.map(repository => (
+          <li key={repository.id}>
+            {repository.title}
+            <button onClick={() => handleRemoveRepository(repository.id)}>
               Remover
             </button>
           </li>

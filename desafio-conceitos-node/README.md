@@ -18,7 +18,7 @@ Um crud para quem não sabe é feito dos seguintes metodos:
 - Read (list)
 - Delete
 
-- Rota para Listar  
+- Rota para Listar  dd
     url : /repositories, 
 
 - Rota para criar
